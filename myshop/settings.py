@@ -19,6 +19,7 @@ INSTALLED_APPS = [
 
     # our apps
     'apps.shop.apps.ShopConfig',
+    'apps.cart.apps.CartConfig',
 
     # 3th apps
 
@@ -94,3 +95,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Session cart
+CART_SESSION_ID = 'cart'
+
