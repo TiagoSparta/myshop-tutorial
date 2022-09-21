@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <title>{% block title %}My shop{% endblock %}</title>
-    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -15,15 +15,15 @@
     <div id="subheader">
         <div class="cart">
             {% with total_items=cart|length %}
-            {% if total_items > 0 %}
-            Your cart:
-            <a href="{% url "cart:cart_detail" %}">
-                {{ total_items }} item{{ total_items|pluralize }},
-                ${{ cart.get_total_price }}
-            </a>
-            {% elif not order %}
-            Your cart is empty.
-            {% endif %}
+                {% if total_items > 0 %}
+                    Seu carrinho:
+                    <a href="{% url 'cart:cart_detail' %}">
+                        {{ total_items }} ite{{ total_items|pluralize:"m,ns" }}
+                        (R$ {{ cart.get_total_price }})
+                    </a>
+                {% else %}
+                    Seu carrinho está vazio.
+                {% endif %}
             {% endwith %}
         </div>
     </div>
