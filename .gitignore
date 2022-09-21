@@ -4,6 +4,9 @@
 # Visual Studio directory for debug file launch.json
 .vscode/
 
+# Media directory
+media/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
