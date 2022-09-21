@@ -1,3 +1,9 @@
+# Editor Config settings file
+.editorconfig
+
+# Visual Studio directory for debug file launch.json
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
