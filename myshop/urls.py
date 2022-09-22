@@ -6,7 +6,11 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cart/', include('apps.cart.urls', namespace='cart')),
+    path('orders/', include('apps.orders.urls', namespace='orders')),
     path('', include('apps.shop.urls', namespace='shop')),
+
+    #3th url patterns
+    path('__debug__/', include('debug_toolbar.urls')),
 ]
 
 if settings.DEBUG:

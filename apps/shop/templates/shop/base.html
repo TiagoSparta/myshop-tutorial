@@ -21,7 +21,7 @@
                         {{ total_items }} ite{{ total_items|pluralize:"m,ns" }}
                         (R$ {{ cart.get_total_price }})
                     </a>
-                {% else %}
+                {% elif not order %}
                     Seu carrinho está vazio.
                 {% endif %}
             {% endwith %}

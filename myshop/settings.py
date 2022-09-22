@@ -1,4 +1,3 @@
-from .local_settings import *
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -6,7 +5,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -19,8 +17,10 @@ INSTALLED_APPS = [
     # our apps
     'apps.shop.apps.ShopConfig',
     'apps.cart.apps.CartConfig',
+    'apps.orders.apps.OrdersConfig',
 
     # 3th apps
+    'debug_toolbar',
 
 ]
 
@@ -32,6 +32,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 3th middlewares
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'myshop.urls'
@@ -47,6 +50,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # our context processors
                 'apps.cart.context_processors.cart',
             ],
         },
@@ -99,4 +104,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Session cart
 CART_SESSION_ID = 'cart'
 
-# Sensitive variables
+# django debug toolbar
+INTERNAL_IPS = ["127.0.0.1", ]
+
+# Sensible variables
+from .local_settings import *
