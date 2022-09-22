@@ -1,8 +1,7 @@
+from .local_settings import *
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-SECRET_KEY = 'django-insecure-bdez+4rw%q52_nh&z!h2k5@p+1gvrqy(+0jfy*mayv5@+^q4l-'
 
 DEBUG = True
 
@@ -100,3 +99,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Session cart
 CART_SESSION_ID = 'cart'
 
+# Sensitive variables
